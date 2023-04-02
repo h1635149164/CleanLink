@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 
+    CleanLink removes tracking tokens from links that are supplied to it.
+    Copyright (C) 2023  Lukáš Havel
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+-->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dms="clr-namespace:CleanLink.Lib.Resources;assembly=CleanLinkLib"
+             x:Class="CleanLink.About"
+             Title="About">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout VerticalOptions="Start" HorizontalOptions="Fill" Spacing="5" Padding="25" >
+            <Image Source="logo_round.png" HeightRequest="128" WidthRequest="128" HorizontalOptions="Center"/>
+            <Label HorizontalOptions="Center" Text="CleanLink" FontSize="Title" FontAttributes="Bold"/>
+            <Label x:Name="VersionLabel" HorizontalOptions="Center" />
+            <Label Text="Copyright (C) 2023  Lukáš Havel" HorizontalOptions="Center" />
+            <Label Text="This program comes with ABSOLUTELY NO WARRANTY" HorizontalOptions="Center" FontSize="Body"/>
+            <Label 
+            Text="Stripping tracking tokens?"
+            SemanticProperties.HeadingLevel="Level1" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            />
+            <Label Text="When you click on a link, it can contain a lot of information about you that you might not want to share. This information is called tracking tokens. Stripping tracking tokens off of links means removing this information so that you can browse the internet more privately and securely."/>
+            <Label 
+            Text="How does this work?"
+            SemanticProperties.HeadingLevel="Level1" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            />
+            <Label Text="When you want to share a link from a supported app or webpage, you can choose the CleanLink option when possible. This option will remove tracking tokens from the link, making it more private. Once you have selected the CleanLink option, the share dialog will show up again. From there, you can pick the app you want to share the link with."/>
+            <Label 
+            Text="Licenses"
+            SemanticProperties.HeadingLevel="Level1" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            />
+            <Label 
+            Text="About CleanLink"
+            SemanticProperties.HeadingLevel="Level2" 
+            HorizontalOptions="Center"
+            FontSize="Medium"
+            />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="2.5">
+                <Button Text="License" HorizontalOptions="End" Clicked="License_Clicked"/>
+                <Button Text="Source Code" HorizontalOptions="Start" Clicked="Github_Clicked"/>
+            </StackLayout>
+            <Label
+                Text="Third-party Licenses"
+                SemanticProperties.HeadingLevel="Level2"
+                HorizontalOptions="Center"
+                FontSize="Medium"
+            />
+            <ListView x:DataType="dms:License" IsPullToRefreshEnabled="False" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" SelectionMode="None" SeparatorVisibility="None" >
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type dms:License}">
+                        <dms:License Holder=".NET Foundation" Name="MAUI" source="https://raw.githubusercontent.com/dotnet/maui/main/LICENSE.txt"/>
+                        <dms:License Holder="tabler" Name="tabler icons" source="https://raw.githubusercontent.com/tabler/tabler-icons/master/LICENSE"/>
+                        <dms:License Holder=".NET Foundation" Name=".NET" source="https://raw.githubusercontent.com/dotnet/core/main/LICENSE.TXT"/>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                            <Grid Padding="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Name}"
+                                    FontAttributes="Bold"
+                                />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Holder}"
+                                />
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    Text="License"
+                                    Clicked="thirdPartyLicense_open"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

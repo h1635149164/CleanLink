@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+    CleanLink removes tracking tokens from links that are supplied to it.
+    Copyright (C) 2023  Lukáš Havel
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+-->
+
+<Shell
+    x:Class="CleanLink.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CleanLink"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="About" Icon="info_small.svg" >
+            <ShellContent ContentTemplate="{DataTemplate local:About}" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:Settings}" />
+        </Tab>
+    </TabBar>
+    
+</Shell>

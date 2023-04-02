@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 
+    CleanLink removes tracking tokens from links that are supplied to it.
+    Copyright (C) 2023  Lukáš Havel
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+-->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dms="clr-namespace:CleanLink.Lib.Resources;assembly=CleanLinkLib"
+             x:Class="CleanLink.Settings"
+             Title="Settings">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="5" HorizontalOptions="Fill" VerticalOptions="Start">
+            <Label 
+            Text="Links to strip"
+            SemanticProperties.HeadingLevel="Level1"
+            FontSize="Large"
+            VerticalOptions="Center"
+            />
+            <Label 
+            Text="Uncheck or check various filters, to achieve shorter processing times."/>
+            <ListView x:Name="EnabledDisabled" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never" SelectionMode="None" SeparatorVisibility="None" x:DataType="dms:Property">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="Item">
+                        <ViewCell>
+                            <Grid HorizontalOptions="Fill" Padding="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    x:Name="NameLabel"
+                                    Text="{Binding Code}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                />
+                                <Switch
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    x:Name="IsOn"
+                                    IsToggled="{Binding Value}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="EndAndExpand"
+                                    Toggled="IsOn_Toggled"
+                                />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="currentlySaved"/>
+            <Button Text="Save Ignored Filters" HorizontalOptions="Fill" Clicked="SaveState"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
