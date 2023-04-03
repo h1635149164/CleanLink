@@ -39,7 +39,7 @@ public partial class About : ContentPage
 
     private void License_Clicked(object sender, EventArgs e)
     {
-        Browser.Default.OpenAsync("https://github.com/h1635149164/CleanLink/blob/master/LICENSE");
+        Browser.Default.OpenAsync("https://github.com/h1635149164/CleanLink/blob/release/LICENSE");
     }
 
     private void thirdPartyLicense_open(object sender, EventArgs e)

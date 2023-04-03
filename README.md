@@ -19,18 +19,4 @@ I'm open to suggestions and hearing out the issues you might run into while usin
 ## Build
 To build this project yourself, you'll need Visual Studio with the .NET Multi-platform App UI development package.
 ## License
-This project is licensed under the terms of the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html). See licenses of the used third party libraries and frameworks in [THIRDPARTY.md](https://github.com/h1635149164/CleanLink/blob/master/THIRDPARTY.md)
-## Contributing
-### Style
-- Use tabs to offset items.
-- Try to put the opening curly brace on the next line, not the one.
-- Try to use camelCase for local variable names
-```c#
-//Ideal code sample:
-if (calledResult)
-{
-	//Something
-}
-```
-### Other guidelines
-- Try to open an Issue to discuss the addition/change you're proposing with others before implementing it.
+This project is licensed under the terms of the [GPLv3](https://github.com/h1635149164/CleanLink/blob/release/LICENSE). See licenses of the used third party libraries and frameworks in [THIRDPARTY.md](https://github.com/h1635149164/CleanLink/blob/release/THIRDPARTY.md)
