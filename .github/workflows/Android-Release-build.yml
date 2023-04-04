@@ -6,7 +6,7 @@ on:
     paths:
       - CleanLink/**
       - CleanLinkLib/**
-      - Test/**
+      - Tests/**
 
 jobs:
   build:
