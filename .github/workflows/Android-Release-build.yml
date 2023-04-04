@@ -3,6 +3,10 @@ name: .NET android Release build
 on:
   push:
     branches: [ "release" ]
+    paths:
+      - CleanLink/**
+      - CleanLinkLib/**
+      - Test/**
 
 jobs:
   build:
