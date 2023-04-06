@@ -20,7 +20,7 @@
              xmlns:dms="clr-namespace:CleanLink.Lib.Resources;assembly=CleanLinkLib"
              x:Class="CleanLink.About"
              Title="About">
-    <ScrollView Orientation="Vertical" HorizontalOptions="Center">
+    <ScrollView Orientation="Vertical" HorizontalOptions="Center" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
         <VerticalStackLayout VerticalOptions="Start" HorizontalOptions="Fill" Spacing="2.5" Padding="25" >
             <Image Source="logo_round.png" HeightRequest="128" WidthRequest="128" HorizontalOptions="Center"/>
             <Label HorizontalOptions="Center" Text="CleanLink" FontSize="Title" FontAttributes="Bold"/>

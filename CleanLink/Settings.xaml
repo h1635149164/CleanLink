@@ -21,7 +21,7 @@
              x:Class="CleanLink.Settings"
              Title="Settings">
 
-    <ScrollView HorizontalOptions="Fill">
+    <ScrollView HorizontalOptions="Fill" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
         <VerticalStackLayout Padding="25" Spacing="2.5" HorizontalOptions="Fill" VerticalOptions="Start">
             <Label 
             Text="Links to strip"
