@@ -80,6 +80,7 @@
     <MauiImage Update="Resources\Images\info_small.svg" BaseSize="30,30" />
     <MauiImage Update="Resources\Images\settings.svg" BaseSize="30,30" />
     <MauiImage Update="Resources\Images\logo_round.png" BaseSize="480,480" />
+    <MauiImage Update="Resources\Images\unlink.svg" BaseSize="30,30"/>
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
