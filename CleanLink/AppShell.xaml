@@ -26,6 +26,9 @@
         <Tab Title="About" Icon="info_small.svg" >
             <ShellContent ContentTemplate="{DataTemplate local:About}" />
         </Tab>
+        <Tab Title="Clean" Icon="unlink.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:Clean}"/>
+        </Tab>
         <Tab Title="Settings" Icon="settings.svg">
             <ShellContent ContentTemplate="{DataTemplate local:Settings}" />
         </Tab>
