@@ -21,8 +21,8 @@
              x:Class="CleanLink.Settings"
              Title="Settings">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="25" Spacing="5" HorizontalOptions="Fill" VerticalOptions="Start">
+    <ScrollView HorizontalOptions="Fill">
+        <VerticalStackLayout Padding="25" Spacing="2.5" HorizontalOptions="Fill" VerticalOptions="Start">
             <Label 
             Text="Links to strip"
             SemanticProperties.HeadingLevel="Level1"
@@ -35,13 +35,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:Name="Item">
                         <ViewCell>
-                            <Grid HorizontalOptions="Fill" Padding="1">
+                            <Grid HorizontalOptions="Fill" Padding="2.5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
-                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="50"/>
                                 </Grid.ColumnDefinitions>
                                 <Label 
                                     Grid.Row="0"
@@ -57,7 +57,7 @@
                                     x:Name="IsOn"
                                     IsToggled="{Binding Value}"
                                     VerticalOptions="Center"
-                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="End"
                                     Toggled="IsOn_Toggled"
                                 />
                             </Grid>
